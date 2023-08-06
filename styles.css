@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root{
+    --poppins-font: 'Poppins', sans-serif;
+    --dark-color: #0a0a0a;
+    --red-color: #f64445;
+    --light-color: #fff;
+    --grey-color: #505050;
+    --yellow-color: #f2c10e;
+    --light-dark-color: #0a0a0a;
+    --black: #04152d;
+    --black2: #041226;
+    --black3: #020c1b;
+    --black-lighter: #1c4b91;
+    --black-light: #173d77;
+    --dark-blue: #071952;
+    --sky-blue: #068FFF;
+    --pink: #da2f68;
+    --orange: #f89e00;
+    --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--black3);
+    font-family: var(--poppins-font);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    background-color: var(--black-light);
+    min-width: 1280px;
+    /* width: 100%; */
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.navbar{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar h1{
+    color: white;
+    font-size: 1.9rem;
+}
+
+.navbar h1 span{
+    color: var(--red-color);
+}
+
+.navbar .searchbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0a0a0a;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.navbar .searchbar .search-area{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .searchbar .search-area input{
+    background: transparent;
+    color: white;
+    border: none;
+    width: 400px;
+    font-size: 1.2rem;
+    transition: width .5s ease-in-out;
+}
+
+.navbar .searchbar .search-area input:focus{
+    border: none;
+    outline: none;
+}
+
+.navbar .searchbar .search-area p {
+    color: white;
+    font-size: 1.3rem;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.navbar .searchbar .searched-result{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 46px;
+    background: #0a0a0a;
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+.navbar .searchbar .searched-result::-webkit-scrollbar{
+    width: 5px;
+}
+.navbar .searchbar .searched-result::-webkit-scrollbar-thumb{
+    background-color: rgb(11, 202, 202);
+    border-radius: 5px;
+    width: 20px;
+    height: 10px;
+}
+.navbar .searchbar .searched-result::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(6, 250, 250);
+}
+.navbar .searchbar .searched-result::-webkit-scrollbar-track{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+.navbar .searchbar .searched-result .result-list{
+    list-style: none;
+}
+
+#empty-result{
+    text-align: center;
+    color: whitesmoke;
+    opacity: .8;
+}
+
+.searched-result .result-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #1a1919;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.searched-result .result-list li:hover{
+    background-color: #302e2e;
+    cursor: pointer;
+}
+
+.searched-result .result-list li img{
+    width: 50px;
+    border-radius: 5px;
+}
+
+.searched-result .result-list li h4{
+    color: var(--pink);
+}
+
+.searched-result .result-list li h4 span{
+    color: #da1255;
+}
+
+/*! Data Div  */
+.content .data{
+    display: flex;
+    height: 600px;
+    margin-top: 1rem;
+    width: 100%;
+    /* overflow-y: scroll; */
+}
+
+.content .data .data-box{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 20px;
+}
+
+.content .data .img-box{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.content .data .img-box img{
+    width: 100%;
+    display: block;
+}
+
+.content .data .info-box{
+    width: 105%;
+    background: var(--dark-blue);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content .data .info-box .title h2{
+    color: white;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.content .data .info-box .options-nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.content .data .info-box .options-nav ul li{
+    font-size: 1.4rem;
+    color: rgb(192, 192, 192);
+    cursor: pointer;
+}
+
+.content .data .info-box .options-nav ul li:hover{
+    opacity: .8;
+}
+
+.active-tab{
+    border-bottom: 4px solid rgb(173, 3, 3);
+    border-radius: 2px;
+}
+
+.content .data .info-box .tabs-data.powerstats .powerstats-rows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 35px 0;
+}
+
+.powerstats-rows h4:nth-child(1){
+    color: rgb(204, 196, 196);
+    font-size: 1.4rem;
+}
+
+.powerstats-rows h4:nth-child(2){
+    color: var(--orange);
+    font-size: 1.4rem;
+}
+
+.content .data .info-box .tabs-data.biography .biography-rows{
+    list-style: none;
+}
+
+.content .data .info-box .tabs-data.biography .biography-rows li{
+    display: flex;
+    margin: 35px 0;
+}
+
+.biography-rows h4:nth-child(1){
+    margin-right: 10px;
+    color: rgb(204, 196, 196);
+    font-size: 1.2rem;
+}
+
+.biography-rows h4:nth-child(2){
+    color: var(--orange);
+    font-size: 1.1rem;
+}
+
+.extra{
+    width: 610px;
+}
+
+.content .data .info-box .tabs-data.appearance .appearance-rows{
+    list-style: none;
+}
+
+.content .data .info-box .tabs-data.appearance .appearance-rows li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.appearance-rows li h4:nth-child(1){
+    font-size: 1.4rem;
+    color: rgb(204, 196, 196);
+}
+.appearance-rows li h4:nth-child(2){
+    font-size: 1.4rem;
+    color: var(--orange);
+}
+
+.content .data .info-box .tabs-data.connections .connections-rows{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+.content .data .info-box .tabs-data.connections .connections-rows h4:nth-child(1){
+    color: rgb(204, 196, 196);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.content .data .info-box .tabs-data.connections .connections-rows h4:nth-child(2){
+    color: var(--orange);
+    font-size: 1.2rem;
+    width: 690px;
+    margin-left: 10px;
+}
+
+/* .powerstats{
+    display: none;
+}
+
+.biography{
+    display: none;
+}
+
+.appearance{
+    display: none;
+}
+
+.connections{
+    display: none;
+} */
